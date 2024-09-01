@@ -7,6 +7,7 @@ const app = express();
 
 // Rutas de cada módulo
 const userRouter = require('./routers/users/user.route');
+const tipoUserRouter = require('./routers/users/tipouser.route')
 
 // Middleware - Funcionalidaes con objetivos intermedios
 app.use (express.urlencoded({ extended : false })); // Body := json url
@@ -17,5 +18,6 @@ app.use(morgan('dev'));
 
 // Rutas exportadas:
 app.use('/api/users', userRouter);
+app.use('/api/roles', tipoUserRouter);
 
 module.exports = app
