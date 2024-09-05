@@ -10,6 +10,7 @@ const UsuarioSchema = Schema({
     rol: {type: Schema.ObjectId, ref: 'perfiles'},
     estado: {type: Boolean, default: true},
     datos_user: {
+        identificacion: String,
         nombres: String,
         apellidos: String,
         telefono: String,
