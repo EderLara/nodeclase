@@ -10,6 +10,7 @@ const api = express.Router();
 
 // Rutas
 api.get('/testusercontrol', userControl.TestUser);
+api.get('/usuario/:idusuario', userControl.getUser);
 api.post('/newuser/', userControl.newUser);
 
 

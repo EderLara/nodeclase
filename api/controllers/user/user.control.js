@@ -67,8 +67,27 @@ const newUser = async (req, res) => {
 
 }
 
+/* ----------------------------------------------------------------- Get User  ----------------------------------------------------------------- */
+const getUser = async (req, res) => {
+    let idusario = req.params.idusuario;
+    User.findById(idusario)
+    .then(userfound=>{
+        if (!userfound) return res.status(404).send({message: mensajes.m404});
+        return res.status(200).send({usuario: userfound})
+    })
+    .catch(err=>{
+        if (err) throw err;
+    })
+}
+
+/* ----------------------------------------------------------------- GetAll User  ----------------------------------------------------------------- */
+
+/* ----------------------------------------------------------------- LOGIN  ----------------------------------------------------------------- */
+
+
 module.exports = {
     TestUser,
     newUser,
+    getUser,
 }
             

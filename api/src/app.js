@@ -6,8 +6,8 @@ const morgan = require('morgan');
 const app = express();
 
 // Rutas de cada módulo
-const userRouter = require('./routers/users/user.route');
-const tipoUserRouter = require('./routers/users/tipouser.route')
+const userRouter = require('../routers/users/user.route');
+const tipoUserRouter = require('../routers/users/tipouser.route')
 
 // Middleware - Funcionalidaes con objetivos intermedios
 app.use (express.urlencoded({ extended : false })); // Body := json url
